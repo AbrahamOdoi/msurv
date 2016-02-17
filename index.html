@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+
+		<!-- Include meta tag to ensure proper rendering and touch zooming -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Include jQuery Mobile stylesheets -->
+		<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+		<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
+
+		<!-- Include the jQuery library -->
+		<script src="jquery-1.11.3.min.js"></script>
+		<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+
+		<!-- Include the jQuery Mobile library -->
+		<script src="jquery.mobile-1.4.5.min.js"></script>
+		<!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+
+	</head>
+
+	<body>
+
+		<!-- <div data-role="page" data-theme="a" id="pgFunctions">
+		<div data-role="header" data-position="inline">
+		<a href="#" data-iconpos="" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline" data-rel="back">Logout</a>
+		</div>
+		<div data-role="content" data-theme="c">
+		<div style="width: 100%; text-align: center; padding-top: 10%;">
+		<a href="#pgApplications" data-transition='slide' class="ui-input-btn ui-btn ui-btn-inline" style="padding: 10%;"> <img src="img/app.png" />
+		<br />
+		Applications </a>
+		<br />
+		<a href="#pgQuotas" data-transition='slide' class="ui-input-btn ui-btn ui-btn-inline" style="padding: 10%;"> <img src="img/quota.png" />
+		<br />
+		Quotas </a>
+		<br />
+		<div class="ui-input-btn ui-btn ui-btn-inline" style="padding: 10%;">
+		<img src="img/GIPC.png" />
+		<br />
+		Query
+		</div>
+
+		</div>
+		</div>
+
+		</div> -->
+
+		<div data-role="page" data-theme="a" id="pgApplications">
+			<div data-role="header" data-position="inline">
+				<a href="#" data-iconpos="notext" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline" data-rel="back" >Go Back</a>
+				<h1>SURVEYS</h1>
+			</div>
+			<div data-role="content" data-theme="c" id="contentApplications">
+
+			</div>
+		</div>
+
+		<div data-role="page" data-theme="a" id="pgQuotas">
+			<div data-role="header" data-position="inline">
+				<a href="#" data-iconpos="notext" class="ui-btn ui-shadow ui-corner-all ui-icon-back ui-btn-icon-notext ui-btn-a ui-btn-inline" data-rel="back">Go Back</a>
+				<h1>Quotas</h1>
+			</div>
+			<div data-role="content" data-theme="c" id="contentQuota">
+
+			</div>
+
+		</div>
+		<!-- Add your site or application content here -->
+
+		<!-- <script src="js/vendor/jquery-2.1.0.min.js"></script>
+		<script src="js/helper.js"></script>
+		<script src="js/main.js"></script> -->
+
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script>
+			( function(b, o, i, l, e, r) {
+					b.GoogleAnalyticsObject = l;
+					b[l] || (b[l] = function() {
+						(b[l].q = b[l].q || []).push(arguments)
+					});
+					b[l].l = +new Date;
+					e = o.createElement(i);
+					r = o.getElementsByTagName(i)[0];
+					e.src = '//www.google-analytics.com/analytics.js';
+					r.parentNode.insertBefore(e, r)
+				}(window, document, 'script', 'ga'));
+			ga('create', 'UA-XXXXX-X');
+			ga('send', 'pageview');
+		</script>
+		<script>
+			$("#contentApplications").html('Loading Surveys');
+
+			$("#contentApplications").css('color', 'green');
+			$("#contentApplications").css('text-align', 'center');
+			$("#contentApplications").css('font-weight', 'bolder');
+
+			$.get('http://78.46.254.56/mysurvey/pgLogin.php', function(data, status) {
+				if (data == 'failed') {
+					$("#contentApplications").html('No pending surveys');
+
+				} else {
+					setTimeout(function() {
+						$("#contentApplications").css('color', 'Black');
+						$("#contentApplications").css('text-align', '');
+						$("#contentApplications").css('font-weight', '');
+						$("#contentApplications").html(data);
+					}, 5000);
+				}
+
+				// alert(data);
+				// alert(status);
+			});
+
+			// event.preventDefault();
+		</script>
+	</body>
+</html>
