@@ -97,15 +97,18 @@
 
 			$.get('http://78.46.254.56/mysurvey/pgLogin.php', function(data, status) {
 				if (data == 'failed') {
+					alert('failed');
 					$("#contentApplications").html('No pending surveys');
 
 				} else { 
+					alert('loading..');
 					// setTimeout(function() {
 						$("#contentApplications").css('color', 'Black');
 						$("#contentApplications").css('text-align', '');
-						$("#contentApplications").css('font-weight', '');
-						$("#contentApplications").html(data);
-					// }, 5000);
+						$("#contentApplications").css('font-weight', ''
+							);
+							$("#contentApplications").html(data);
+ 					// }, 5000);
 				}
  
 				// alert(data);
