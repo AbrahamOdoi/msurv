@@ -73,7 +73,7 @@
 		<script src="js/main.js"></script> -->
 
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
+		<!-- <script>
 			( function(b, o, i, l, e, r) {
 					b.GoogleAnalyticsObject = l;
 					b[l] || (b[l] = function() {
@@ -87,7 +87,7 @@
 				}(window, document, 'script', 'ga'));
 			ga('create', 'UA-XXXXX-X');
 			ga('send', 'pageview');
-		</script>
+		</script> -->
 		<script>
 			$("#contentApplications").html('Loading Surveys');
 
@@ -99,15 +99,15 @@
 				if (data == 'failed') {
 					$("#contentApplications").html('No pending surveys');
 
-				} else {
-					setTimeout(function() {
+				} else { 
+					// setTimeout(function() {
 						$("#contentApplications").css('color', 'Black');
 						$("#contentApplications").css('text-align', '');
 						$("#contentApplications").css('font-weight', '');
 						$("#contentApplications").html(data);
-					}, 5000);
+					// }, 5000);
 				}
-
+ 
 				// alert(data);
 				// alert(status);
 			});
