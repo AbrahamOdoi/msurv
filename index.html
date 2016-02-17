@@ -66,28 +66,13 @@
 			</div>
 
 		</div>
-		<!-- Add your site or application content here -->
+			<!-- Include the jQuery library -->
+		<script src="jquery-1.11.3.min.js"></script>
+		<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
 
-		<!-- <script src="js/vendor/jquery-2.1.0.min.js"></script>
-		<script src="js/helper.js"></script>
-		<script src="js/main.js"></script> -->
-
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<!-- <script>
-			( function(b, o, i, l, e, r) {
-					b.GoogleAnalyticsObject = l;
-					b[l] || (b[l] = function() {
-						(b[l].q = b[l].q || []).push(arguments)
-					});
-					b[l].l = +new Date;
-					e = o.createElement(i);
-					r = o.getElementsByTagName(i)[0];
-					e.src = '//www.google-analytics.com/analytics.js';
-					r.parentNode.insertBefore(e, r)
-				}(window, document, 'script', 'ga'));
-			ga('create', 'UA-XXXXX-X');
-			ga('send', 'pageview');
-		</script> -->
+		<!-- Include the jQuery Mobile library -->
+		<script src="jquery.mobile-1.4.5.min.js"></script>
+		<!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
 		<script>
 			$("#contentApplications").html('Loading Surveys');
 
@@ -102,17 +87,13 @@
 
 				} else { 
 					alert('loading..');
-					// setTimeout(function() {
 						$("#contentApplications").css('color', 'Black');
 						$("#contentApplications").css('text-align', '');
 						$("#contentApplications").css('font-weight', ''
 							);
 							$("#contentApplications").html(data);
- 					// }, 5000);
 				}
  
-				// alert(data);
-				// alert(status);
 			});
 
 			// event.preventDefault();
